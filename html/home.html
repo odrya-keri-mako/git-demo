@@ -1,0 +1,108 @@
+<style>
+	#page-container.home {
+		height: 100%;
+		width: 100%;
+		background: rgb(2, 0, 36);
+		background: -webkit-linear-gradient(145deg, rgba(2, 0, 36, 1) 0%, rgba(0, 37, 84, 1) 0%, rgba(64, 90, 156, 1) 100%);
+		background: 				linear-gradient(145deg, rgba(2, 0, 36, 1) 0%, rgba(0, 37, 84, 1) 0%, rgba(64, 90, 156, 1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#405a9c", GradientType=1);
+		font-size: 1rem;
+		color: #fff;
+	}
+	#page-container.home p {
+		margin: 10px 0;
+		padding: 0 10px;
+	}
+	#page-container.home .content,
+	#page-container.home .copyright {
+		position: absolute;
+		font-family: Arial, Helvetica, sans-serif;
+		font-style: italic;
+		opacity: 0;
+		transition: all .6s ease-in-out;
+	}
+	#page-container.home .content {
+		display: inline-block;
+		margin-left: 20%;
+		top: 70%;
+	}
+	#page-container.home .copyright {
+		bottom: 5%;
+		right: 2%;
+   font-size: 85%;
+	}
+	#page-container.home.loaded .content {
+		top: 30%;
+	}
+	#page-container.home.loaded .copyright {
+		bottom: 2%;
+	}
+	#page-container.home.loaded .content,
+	#page-container.home.loaded .copyright {
+		opacity: 1;
+	}
+	#page-container.home .content-welcome {
+		font-size: 2.5rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	#page-container.home .content-thanks {
+		font-weight: 400;
+	}
+	#page-container.home .decor-lines {
+		position: absolute;
+		display: flex;
+		width: 400px;
+		height: 400px;
+		bottom: 0;
+		right: 0;
+		-webkit-transform: rotate(45deg);
+						transform: rotate(45deg);
+		transform-origin: right;
+	}
+	#page-container.home .decor-lines:before,
+	#page-container.home .decor-lines:after {
+		content: "";
+		width: 50px;
+		height: 0;
+		background: #ffffff17;
+		transition: all .3s linear;
+	}
+	#page-container.home .decor-lines:before {
+		margin-right: 30px;
+		margin-top: -220px;
+	}
+	#page-container.home .decor-lines:after {
+		margin-top: -150px;
+	}
+	#page-container.home.loaded .decor-lines:before,
+	#page-container.home.loaded .decor-lines:after {
+		height: 300%;
+	}
+	@media (min-width: 576px) {
+		#page-container.home .content-welcome {
+			font-size: 2.75rem;
+		}
+		#page-container.home .content-thanks {
+			font-size: 1.2rem;
+		}
+	}
+	@media (min-width: 768px) {
+		#page-container.home .content-welcome {
+			font-size: 3rem;
+		}
+		#page-container.home .content-thanks {
+			font-size: 1.4rem;
+		}
+	}
+</style>
+<div id="page-container" class="d-hidden" ng-class="state.id">
+	<main>
+		<div class="decor-lines"></div>
+  	<div class="content">
+  	  <p class="content-welcome">Üdvözöljük</p>
+  	  <p class="content-thanks">Köszönjük hogy ellátogatott weboldalunkra!</p>
+  	</div>
+  	<p class="copyright">Copyright © {{currentYear}} KERI Informatika</p>
+	</main>
+</div>
